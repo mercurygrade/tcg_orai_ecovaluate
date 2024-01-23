@@ -2,8 +2,9 @@
 const hre = require("hardhat");
 
 async function main() {
-  const CarbonFootPrint = await hre.ethers.getContractFactory("Carbon_Foot_Print"); //fetching bytecode and ABI
-  const carbonFootPrint = await CarbonFootPrint.deploy(); //creating an instance of our smart contract
+
+  const CarbonFootPrint = await hre.ethers.getContractFactory("Carbon_Foot_print"); //fetching bytecode and ABI
+  const carbonFootPrint = await CarbonFootPrint.deploy("DAPP owner wallet address"); //creating an instance of our smart contract
 
   await carbonFootPrint.deployed();//deploying your smart contract
 
